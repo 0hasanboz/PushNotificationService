@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
-  DevAccountEmail: hasbzz5@gmail.com
-  DevAccountToken: 64m5uexbmhz1uon9pytw1u9o9osa1yixxfteqewajcbnism6j3iyk786mdzzsigwyg94qdf4yqgtxuqkxt3zji3czwj19qugqmz6fxbfr4d4h4z6iqp95bn9b483nd1g9bnho1tc43boxitaz6xjyqjhydegdgm9a5h3qxmninohqntkn7jd8jk1kb8b336cfgbxdaps
+  DevAccountEmail: 
+  DevAccountToken: 
   AadAuthorization: 
-  SelectedStudio: Hazel Games
-  SdkPath: Assets/PlayFabSDK
+  SelectedStudio: 
+  SdkPath: 
   EdExPath: 
   LocalCloudScriptPath: 
   PanelIsShown: 0
-  curMainMenuIdx: 1
+  curMainMenuIdx: 0
   curSubMenuIdx: 0

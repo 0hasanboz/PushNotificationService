@@ -41,7 +41,7 @@ public class PlayFabLogin : MonoBehaviour
 
     private void CreateNotificationController()
     {
-        INotificationService notificationService;
+        INotificationService notificationService = null;
 
 #if UNITY_ANDROID
         notificationService = new AndroidNotificationService();
