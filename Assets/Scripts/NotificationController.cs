@@ -5,13 +5,11 @@ using UnityEngine;
 public class NotificationController
 {
     private readonly INotificationService _notificationService;
-    private readonly string _playFabId;
     private string _pushToken;
 
-    public NotificationController(INotificationService notificationService, string playFabId)
+    public NotificationController(INotificationService notificationService)
     {
         _notificationService = notificationService;
-        _playFabId = playFabId;
     }
 
     public async Task Initialize()

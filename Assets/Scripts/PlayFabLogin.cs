@@ -50,7 +50,7 @@ public class PlayFabLogin : MonoBehaviour
         notificationService = new IOSNotificationService();
 #endif
 
-        NotificationController notificationController = new NotificationController(notificationService, playFabId);
+        NotificationController notificationController = new NotificationController(notificationService);
         notificationController.Initialize();
     }
 }
