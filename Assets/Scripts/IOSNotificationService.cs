@@ -17,26 +17,29 @@ public class IOSNotificationService : INotificationService
     {
         Debug.Log("iOS: Asking for permission");
 #if UNITY_IOS
- var authorizationOption = AuthorizationOption.Alert | AuthorizationOption.Badge | AuthorizationOption.Sound;
+        var authorizationOption = AuthorizationOption.Alert | AuthorizationOption.Badge | AuthorizationOption.Sound;
         using var request = new AuthorizationRequest(authorizationOption, true);
         while (!request.IsFinished)
         {
             await Task.Yield();
         }
 
+        RegisterForPush(request.DeviceToken);
         return request.Granted ? PermissionRequestResult.Allowed : PermissionRequestResult.Denied;
 #endif
         return PermissionRequestResult.Denied;
     }
 
-    public void RegisterForPush(string playFabId, string pushToken)
+    private void RegisterForPush(string deviceToken)
     {
-        Debug.Log("iOS: Registering for push");
-        if (pushToken != null)
+        if (deviceToken != null)
         {
             RegisterForIOSPushNotificationRequest request = new RegisterForIOSPushNotificationRequest();
-            request.DeviceToken = pushToken;
-            PlayFabClientAPI.RegisterForIOSPushNotification(request, OnPlayFabReg, OnPlayFabError);
+            Debug.Log($"Device Token: {deviceToken}");
+            request.DeviceToken = deviceToken;
+            PlayFabClientAPI.RegisterForIOSPushNotification(request,
+                OnPlayFabReg,
+                OnPlayFabError);
         }
         else
         {

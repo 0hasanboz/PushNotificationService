@@ -7,20 +7,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:731754759414:android:5b29c90c2344a183ced8d7",
+        "mobilesdk_app_id": "1:731754759414:ios:b6d9072d967e811fced8d7",
         "android_client_info": {
           "package_name": "com.DefaultCompany.PlayfabPushNotificationExample"
         }
       },
-      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDPH6rejzkr5JRnP--PtUJc6fvtLWBODM8"
+          "current_key": "AIzaSyDrZeGLNhognCmdpF6O8Bz3fAnyuxJeaWQ"
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 0
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "status": 1
         }
       }
     }

@@ -16,19 +16,12 @@ public class NotificationController
 
     public async Task Initialize()
     {
-        FirebaseMessaging.TokenReceived += OnTokenReceived;
-        FirebaseMessaging.MessageReceived += OnMessageReceived;
-
         var permissionResult = await _notificationService.AskForPermission();
         Debug.Log("Permission result: " + permissionResult);
         if (permissionResult == PermissionRequestResult.Denied) return;
-        _notificationService.Initialize();
-    }
 
-    private void OnTokenReceived(object sender, TokenReceivedEventArgs token)
-    {
-        _pushToken = token.Token;
-        _notificationService.RegisterForPush(_playFabId, _pushToken);
+        FirebaseMessaging.MessageReceived += OnMessageReceived;
+        _notificationService.Initialize();
     }
 
     private void OnMessageReceived(object sender, MessageReceivedEventArgs e)
